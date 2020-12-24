@@ -19,7 +19,10 @@ public class Test {
 
 package com.gp.spring.springcore;
 
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.gp.springcore.annotations.Patient;
 
 public class TestPSchema {
 
@@ -30,6 +33,15 @@ public class TestPSchema {
 		System.out.println("Employee Name: " + emp.getName());
 		//test ingg
 //756pm
+		
+	/*	AbstractApplicationContext ctx2 = new ClassPathXmlApplicationContext("com/gp/springcore/interfaces/pschemaconfig.xml");
+		Employee em1 = (Employee) ctx2.getBean("emp2");
+		System.out.println("emp details: " + em1);*/
+		
+		ClassPathXmlApplicationContext ctx2 = new ClassPathXmlApplicationContext("com/gp/spring/springcore/pschemaconfig.xml");
+		Employee empl2 = (Employee) ctx2.getBean("emp2");
+		System.out.println("Employee ID: " + empl2.getId());
+		System.out.println("Employee Name: " + empl2	.getName());
 	}
 
 }
